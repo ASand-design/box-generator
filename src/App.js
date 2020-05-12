@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+import Box from './components/Box';
+import BoxView from './components/BoxView';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [currentBox, setCurrentBox] = useState('');
 
+    const boomBox = ( newBox ) => {
+      setCurrentBox( newBox );
+    }
+    return(
+      <>
+        <Box onNewBox = { boomBox } />
+        <BoxView bgColor = { currentBox } />
+        <BoxView bgColor = 'purple' />
+        <BoxView bgColor = 'gold' />
+      </>
+    );
+}
 export default App;
