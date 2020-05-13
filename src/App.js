@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 // import './App.css';
 import Box from './components/Box';
 import BoxView from './components/BoxView';
+// import styled from 'styled-components'
 
 
 function App() {
@@ -13,10 +14,10 @@ function App() {
     }
     return(
       <>
+        <BoxView background = { currentBox } />
+        <BoxView backgroud = 'purple' />
+        <BoxView background = 'gold' />
         <Box onNewBox = { boomBox } />
-        <BoxView bgColor = { currentBox } />
-        <BoxView bgColor = 'purple' />
-        <BoxView bgColor = 'gold' />
       </>
     );
 }
